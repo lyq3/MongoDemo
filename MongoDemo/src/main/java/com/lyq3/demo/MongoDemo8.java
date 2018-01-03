@@ -15,17 +15,17 @@ import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 
 /**
- * Í³¼Æ
+ * ç»Ÿè®¡
  * @author Administrator
  *
  */
 public class MongoDemo8 {
 	public static void main(String[] args) {
-		//ÉèÖÃÒªÁ¬½ÓÊı¾İ¿âÃû³ÆºÍ¶Ë¿Ú
+		//è®¾ç½®è¦è¿æ¥æ•°æ®åº“åç§°å’Œç«¯å£
 		MongoClient client=new MongoClient("localhost",27017);
-		MongoDatabase db=client.getDatabase("test");	///Á´½ÓÊı¾İ¿â
+		MongoDatabase db=client.getDatabase("test");	///é“¾æ¥æ•°æ®åº“
 		List<BasicDBObject> all=new ArrayList<BasicDBObject>();
-		//Òª²Ù×÷µÄ¼¯ºÏÃû³Æ
+		//è¦æ“ä½œçš„é›†åˆåç§°
 		MongoCollection<Document> col=db.getCollection("lyq");
 		BasicDBObject cond=new BasicDBObject("$group",new BasicDBObject("_id","$loc").append("count", new BasicDBObject("$sum",1)));
 		all.add(cond);
@@ -34,5 +34,6 @@ public class MongoDemo8 {
 			System.out.println(d);
 		}
 		client.close();
+
 	}
 }
