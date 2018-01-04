@@ -11,16 +11,17 @@ import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 
 /**
- * É¾³ıÊı¾İ
+ * åˆ é™¤æ•°æ®
  * @author Administrator
  *
  */
 public class MongoDemo7 {
+	
 	public static void main(String[] args) {
-		//ÉèÖÃÒªÁ¬½ÓÊı¾İ¿âÃû³ÆºÍ¶Ë¿Ú
+		//è®¾ç½®è¦è¿æ¥æ•°æ®åº“åç§°å’Œç«¯å£
 		MongoClient client=new MongoClient("localhost",27017);
-		MongoDatabase db=client.getDatabase("test");	///Á´½ÓÊı¾İ¿â
-		//Òª²Ù×÷µÄ¼¯ºÏÃû³Æ
+		MongoDatabase db=client.getDatabase("test");	///é“¾æ¥æ•°æ®åº“
+		//è¦æ“ä½œçš„é›†åˆåç§°
 		MongoCollection<Document> col=db.getCollection("lyq");
 		BasicDBObject conda=new BasicDBObject("deptno",1002);
 		DeleteResult res=col.deleteOne(conda);
